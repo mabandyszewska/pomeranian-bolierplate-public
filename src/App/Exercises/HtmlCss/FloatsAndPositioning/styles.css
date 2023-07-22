@@ -1,0 +1,26 @@
+.square {
+  width: 150px;
+  height: 150px;
+  background-color: lightskyblue;
+  border: 1px solid violet;
+  float: left;
+  margin-right: 2em;
+  font-size: 3em;
+}
+.container {
+  display: table;
+  background-color: rgb(69, 117, 117);
+  position: relative;
+}
+.x {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 0;
+}
+.y {
+  position: relative;
+  top: 0px;
+  left: 0;
+  z-index: 0;
+}

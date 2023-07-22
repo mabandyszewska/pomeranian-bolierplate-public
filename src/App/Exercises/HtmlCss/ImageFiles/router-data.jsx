@@ -5,7 +5,7 @@ import { ImageFiles } from './index';
 export const blockRouterMetaData = {
   path: 'image-files',
   date: '15-07-2023',
-  linkLabel: 'Image',
+  linkLabel: 'Images',
   blockNo: 12,
   element: <ImageFiles />,
   tags: ['html', 'image'],
