@@ -7,6 +7,8 @@ import { Cwiczenie3MetaData } from './Cwiczenie3/router-data';
 import { Cwiczenie4MetaData } from './Cwiczenie4/router-data';
 import { Cwiczenie4AdvancedMetaData } from './Cwiczenie4Advanced/router-data';
 import { MaterialUIBasicElementMetaData } from './MaterialUIBasicElements/router-data';
+import { MUITemplateDashboardMetaData } from './MUITemplateDashboard/router-data';
+import { ToDoListMetaData } from './ToDoList/router-data';
 export const blockRouterMetaData = [
   SubRouteExampleMetaData,
   Cwiczenie1MetaData,
@@ -15,6 +17,8 @@ export const blockRouterMetaData = [
   Cwiczenie4MetaData,
   Cwiczenie4AdvancedMetaData,
   MaterialUIBasicElementMetaData,
+  MUITemplateDashboardMetaData,
+  ToDoListMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
