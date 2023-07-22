@@ -1,0 +1,83 @@
+.main-container {
+  position: relative;
+  max-width: 985px;
+}
+.first-container {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  gap: 0.6875rem;
+  font-family: Poppins;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.25rem;
+}
+
+.first-paragraph {
+  width: 56.5625rem;
+  margin: 1.5rem 0 0 0;
+}
+.second-paragraph {
+  width: 52.0625rem;
+  margin: 0 1.5rem 2rem;
+}
+.second-container {
+  display: flex;
+  padding: 1.0625rem 1.3125rem;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.625rem;
+  background: var(--gray-200, #ebebeb);
+  position: relative;
+}
+.third-paragraph {
+  width: 57.625rem;
+  color: var(--text-text-primary, #222);
+  text-align: justify;
+}
+.note-container {
+  display: flex;
+  position: absolute;
+  top: 2rem;
+  right: -10rem;
+  padding: 0.5rem 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--gray-500, #999);
+  background: var(--primary-primary-light, #ffd5db);
+}
+.note-paragraph {
+  width: 12.6rem;
+  color: var(--text-text-primary, #222);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.875rem;
+}
+.btn-exercise {
+  display: flex;
+  padding: 0.625rem 7.9375rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  border-radius: 1.22775rem;
+  border: 1px solid var(--primary-primary, #fe3756);
+  background: var(--primary-primary-light, #ffd5db);
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4.604rem;
+  cursor: pointer;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  padding: 3.75rem;
+}
