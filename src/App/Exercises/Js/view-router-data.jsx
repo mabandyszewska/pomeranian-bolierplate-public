@@ -8,6 +8,12 @@ import { blockRouterMetaData as blockRouterMetaDataIfSwitch } from './IfSwitch/r
 import { blockRouterMetaData as blockRouterMetaDataNumbers } from './Numbers/router-data';
 import { blockRouterMetaData as blockRouterMetaDataExercises } from './ExercisesBooleanNumbers/router-data';
 import { blockRouterMetaData as blockRouterMetaDataEmptyValues } from './EmptyValues/router-data';
+import { blockRouterMetaData as blockRouterMetaArraysBasics } from './JsArraysBasics/router-data';
+import { blockRouterMetaData as blockRouterMetaArraysExercises } from './JsArrayMethodsExercise/router-data';
+
+import { blockRouterMetaData as blockRouterMetaJsStringsAsArrays } from './JsStringsAsArrays/router-data';
+import { blockRouterMetaData as blockRouterMetaJsObjectsBasics } from './JsObjectsBasics/router-data';
+import { blockRouterMetaData as blockRouterMetaJsDateTime } from './JsDateTime/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsVariables1,
@@ -18,6 +24,11 @@ export const blockRouterMetaData = [
   blockRouterMetaDataNumbers,
   blockRouterMetaDataExercises,
   blockRouterMetaDataEmptyValues,
+  blockRouterMetaArraysBasics,
+  blockRouterMetaArraysExercises,
+  blockRouterMetaJsStringsAsArrays,
+  blockRouterMetaJsObjectsBasics,
+  blockRouterMetaJsDateTime,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
