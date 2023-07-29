@@ -2,7 +2,9 @@ import './styles.css';
 
 export const Exercise = () => {
   function excercise1() {
-    function sameNumbers(tablica1, tablica2) {}
+    function sameNumbers(tablica1, tablica2) {
+      return tablica1.filter((el) => tablica2.includes(el));
+    }
 
     const result = sameNumbers([1, 2, 3, 4, 5], [3, 5, 7, 9]);
 
@@ -26,17 +28,17 @@ export const Exercise = () => {
 
   function excercise3() {
     function twoDimensionalArray(x, y) {
-      // TODO:
+      return new Array(x).fill(new Array(y).fill(0));
     }
 
-    const result = twoDimensionalArray([1, 2]);
+    const result = twoDimensionalArray(1, 3);
 
     console.log('Excercise 3 result: ', result);
   }
 
   function excercise4() {
     function reverseFun(tablica) {
-      // TODO:
+      return tablica.reverse();
     }
 
     const result = reverseFun([1, 2, 3, 4, 5]);
@@ -46,7 +48,7 @@ export const Exercise = () => {
 
   function excercise5() {
     function getNames(tablicaObiektow) {
-      // TODO:
+      return tablicaObiektow.map(({ name }) => name);
     }
 
     const result = getNames([
