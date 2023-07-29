@@ -4,9 +4,6 @@ function newObj(props) {
   return { ...props, nested: props.nested ? newObj(props.nested) : undefined };
 }
 
-function f1(number1, number2) {}
-const f2 = () => {};
-
 function multiplyBy(factor = 1, ...rest) {
   return rest.map((number) => number * factor).join(',');
 }
@@ -42,8 +39,12 @@ export function Exercise() {
   );
 }
 
+// // funkcja nazwa(argumen1. argument2){zadanie do wykonania}
+// function f1(number1, number2) {}
+
 // // funkcja anonimowa
 // f2() => {};
+// const f2 = () => {};
 
 // // funkcja strzałkowa
 // const f3 = () => ({ foo: 'bar' });
