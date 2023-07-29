@@ -16,6 +16,11 @@ import { blockRouterMetaData as blockRouterMetaJsObjectsBasics } from './JsObjec
 import { blockRouterMetaData as blockRouterMetaJsDateTime } from './JsDateTime/router-data';
 import { blockRouterMetaData as blockRouterMetaJsFunctionBasics } from './JsFunctionBasics/router-data';
 import { blockRouterMetaData as blockRouterMetaHoisting } from './Hoisting/router-data';
+import { blockRouterMetaData as blockRouterMetaExerciseJsFunctions } from './ExerciseJsFunctions/router-data';
+import { blockRouterMetaData as blockRouterMetaBlok22Warmup } from './Blok22Warmup/router-data';
+import { blockRouterMetaData as blockRouterMetaSetTimeout } from './SetTimeout/router-data';
+import { blockRouterMetaData as blockRouterMetaVanishString } from './VanishString/router-data';
+import { blockRouterMetaData as blockRouterMetaTimer } from './Timer/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsVariables1,
@@ -33,6 +38,11 @@ export const blockRouterMetaData = [
   blockRouterMetaJsDateTime,
   blockRouterMetaJsFunctionBasics,
   blockRouterMetaHoisting,
+  blockRouterMetaExerciseJsFunctions,
+  blockRouterMetaBlok22Warmup,
+  blockRouterMetaSetTimeout,
+  blockRouterMetaVanishString,
+  blockRouterMetaTimer,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
