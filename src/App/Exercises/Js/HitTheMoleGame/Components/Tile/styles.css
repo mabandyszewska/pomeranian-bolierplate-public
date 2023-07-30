@@ -1,0 +1,23 @@
+.mole-tile {
+  width: 6.49rem;
+  height: 6.49rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.mole-tile--neutral {
+  background: var(--gray-200, #ebebeb);
+}
+
+.mole-tile--incorrect {
+  background: var(--colors-actions-danger-light, #f3aea8);
+}
+
+.mole-tile--correct {
+  background: var(--colors-actions-success-light, #e2fbd7);
+}
+.mole-tile--has-mole {
+  background-image: url('./mole.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}

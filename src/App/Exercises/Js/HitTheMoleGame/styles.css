@@ -1,0 +1,21 @@
+.mole-controls-panel {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0rem 2rem;
+  align-items: center;
+
+  & span {
+    flex-basis: 12rem;
+  }
+}
+.mole-game-panel {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.mole-warning {
+  color: #da1414;
+  font-size: 2rem;
+}
