@@ -10,9 +10,9 @@
 }
 .mole-game-panel {
   display: grid;
-  gap: 0.5rem;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  width: min-content;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .mole-warning {
