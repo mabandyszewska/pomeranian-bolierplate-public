@@ -4,7 +4,7 @@ import { Label, Button, Output, Results, Tile } from './Components';
 import { useState, useEffect } from 'react';
 import { formatTime, getNewMolePosition } from './Utilities';
 
-const MINUTE = 5000; //1 min in mls
+const MINUTE = 60000; //1 min in mls
 const HIGHLIGHT_TIME = 500;
 const DURATIONS = [
   { label: '1 minuta', duration: MINUTE + 400 },
@@ -13,7 +13,7 @@ const DURATIONS = [
 ];
 
 const MOLES = [
-  { label: '1 kret', molesNo: 1, tiles: 10, timeVisible: 10000 },
+  { label: '1 kret', molesNo: 1, tiles: 10, timeVisible: 1000 },
   { label: '2 krety', molesNo: 2, tiles: 15, timeVisible: 500 },
   { label: '3 krety', molesNo: 3, tiles: 20, timeVisible: 350 },
 ];
@@ -71,6 +71,22 @@ export const HitTheMoleGame = () => {
       setScore((prev) => prev - 1);
     }
   }
+
+  useEffect(() => {
+    if (molesOption === undefined) return;
+    let timeoutId;
+    console.time('mole-position');
+    console.timeEnd('mole-position');
+
+    if (molePosition !== undefined) {
+      timeoutId = setTimeout(
+        () =>
+          setMolePosition(getNewMolePosition(molePosition, molesOption.tiles)),
+        molesOption.timeVisible
+      );
+    }
+    return () => clearTimeout(timeoutId);
+  }, [molePosition, molesOption]);
 
   useEffect(() => {
     let timeoutId;
