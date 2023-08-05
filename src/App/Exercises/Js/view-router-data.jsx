@@ -10,7 +10,6 @@ import { blockRouterMetaData as blockRouterMetaDataExercises } from './Exercises
 import { blockRouterMetaData as blockRouterMetaDataEmptyValues } from './EmptyValues/router-data';
 import { blockRouterMetaData as blockRouterMetaArraysBasics } from './JsArraysBasics/router-data';
 import { blockRouterMetaData as blockRouterMetaArraysExercises } from './JsArrayMethodsExercise/router-data';
-
 import { blockRouterMetaData as blockRouterMetaJsStringsAsArrays } from './JsStringsAsArrays/router-data';
 import { blockRouterMetaData as blockRouterMetaJsObjectsBasics } from './JsObjectsBasics/router-data';
 import { blockRouterMetaData as blockRouterMetaJsDateTime } from './JsDateTime/router-data';
@@ -23,6 +22,8 @@ import { blockRouterMetaData as blockRouterMetaVanishString } from './VanishStri
 import { blockRouterMetaData as blockRouterMetaTimer } from './Timer/router-data';
 import { blockRouterMetaData as blockRouterMetaJsAnimation } from './JsAnimation/router-data';
 import { blockRouterMetaData as blockRouterMetaHitTheMoleGame } from './HitTheMoleGame/router-data';
+import { blockRouterMetaData as blockRouterMetaMemoGame } from './MemoGame/router-data';
+
 export const blockRouterMetaData = [
   blockRouterMetaDataJsVariables1,
   blockRouterMetaDataJsVariables2,
@@ -46,6 +47,7 @@ export const blockRouterMetaData = [
   blockRouterMetaTimer,
   blockRouterMetaJsAnimation,
   blockRouterMetaHitTheMoleGame,
+  blockRouterMetaMemoGame,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
