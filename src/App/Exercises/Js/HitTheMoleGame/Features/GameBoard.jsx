@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Tile } from '../Components';
-import { getNewMolePosition } from '../Utilities';
+import { Tile } from './Tile/Tile';
+// import { useMolePosition } from './UseMolePosition';
+import { useMolePositions } from './UseMolePositions';
+// import { getNewMolePosition } from '../Utilities';
 
 const HIGHLIGHT_TIME = 500;
 
 export function GameBoard({ tiles, setScore, molesOption }) {
+  // console.log('GameBoard component rendered');
   const [correct, setCorrect] = useState();
   const [incorrect, setIncorrect] = useState();
-  const [molePosition, setMolePosition] = useState();
+  const [molePositions, moveRandomly] = useMolePositions(molesOption);
 
   useEffect(() => {
     let timeoutId;
@@ -25,31 +28,16 @@ export function GameBoard({ tiles, setScore, molesOption }) {
     return () => clearTimeout(timeoutId);
   }, [incorrect]);
 
-  useEffect(() => {
-    if (molesOption === undefined) return;
-    let timeoutId;
-    console.time('mole-position');
-    console.timeEnd('mole-position');
-
-    if (molePosition !== undefined) {
-      timeoutId = setTimeout(
-        () =>
-          setMolePosition(getNewMolePosition(molePosition, molesOption.tiles)),
-        molesOption.timeVisible
-      );
-    }
-    return () => clearTimeout(timeoutId);
-  }, [molePosition, molesOption]);
-
-  useEffect(() => {
-    setMolePosition(getNewMolePosition(undefined, molesOption.tiles));
-  }, [molesOption]);
-
   function handleTileClick(index) {
-    if (molePosition === index) {
+    if (
+      molePositions &&
+      molePositions.some((position) => {
+        return position === index;
+      })
+    ) {
       setScore((prev) => prev + 1);
       setCorrect(index);
-      setMolePosition(getNewMolePosition(index, molesOption.tiles));
+      moveRandomly(index);
     } else {
       setIncorrect(index);
       setScore((prev) => prev - 1);
@@ -68,7 +56,12 @@ export function GameBoard({ tiles, setScore, molesOption }) {
         <Tile
           key={index}
           onClick={() => handleTileClick(index)}
-          hasMole={index === molePosition}
+          hasMole={
+            molePositions &&
+            molePositions.some((position) => {
+              return position === index;
+            })
+          }
           variant={getTileVariant(index)}
         />
       ))}

@@ -1,11 +1,12 @@
 import './styles.css';
 import { MasterHeader } from '../../../Components/MasterHeader/MasterHeader';
-import { Label, Button, Output, Results, Tile } from './Components';
-import { useState, useEffect } from 'react';
-import { formatTime, getNewMolePosition } from './Utilities';
+import { Label, Button, Output, Results } from './Components';
+import { useState } from 'react';
+import { formatTime } from './Utilities';
 import { GameBoard } from './Features/GameBoard';
+import { MoleTimer } from './Features/MoleTimer';
 
-const MINUTE = 60000; //1 min in mls
+const MINUTE = 6000; //1 min in mls
 const DURATIONS = [
   { label: '1 minuta', duration: MINUTE + 400 },
   { label: '2 minuty', duration: MINUTE * 2 + 400 },
@@ -14,35 +15,19 @@ const DURATIONS = [
 
 const MOLES = [
   { label: '1 kret', molesNo: 1, tiles: 10, timeVisible: 1000 },
-  { label: '2 krety', molesNo: 2, tiles: 15, timeVisible: 500 },
-  { label: '3 krety', molesNo: 3, tiles: 20, timeVisible: 350 },
+  { label: '2 krety', molesNo: 2, tiles: 15, timeVisible: 1500 },
+  { label: '3 krety', molesNo: 3, tiles: 20, timeVisible: 2000 },
 ];
 
 export const HitTheMoleGame = () => {
+  // console.log('Hit the mole game component renedered');
   const [duration, setDuration] = useState();
   const [prevDuration, setPrevDuration] = useState();
   const [molesOption, setMolesOption] = useState();
   const [status, setStatus] = useState('notStarted');
-  const [timeLeft, setTimeLeft] = useState();
   const [score, setScore] = useState();
   const [showWarning, setShowWarning] = useState(false);
   const [tiles, setTiles] = useState([]);
-  const [intervalId, setIntervalId] = useState();
-
-  function startCountdown() {
-    const id = setInterval(() => setTimeLeft((prev) => prev - 100), 100);
-    setIntervalId(id);
-  }
-
-  // new
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      clearInterval(intervalId);
-      setStatus('finished');
-      setDuration(undefined);
-      setMolesOption(undefined);
-    }
-  }, [intervalId, timeLeft]);
 
   function getInitialTiles(molesOption) {
     return new Array(molesOption.tiles)
@@ -55,11 +40,9 @@ export const HitTheMoleGame = () => {
     if (duration && molesOption) {
       setStatus('started');
       setShowWarning(false);
-      setTimeLeft(duration);
       setPrevDuration(duration);
       setTiles(getInitialTiles(molesOption));
       setScore(0);
-      startCountdown();
     } else {
       setShowWarning(true);
     }
@@ -67,7 +50,12 @@ export const HitTheMoleGame = () => {
 
   function handleStop() {
     setStatus('notStarted');
-    clearInterval(intervalId); // new
+    setDuration(undefined);
+    setMolesOption(undefined);
+  }
+
+  function handleFinish() {
+    setStatus('finished');
     setDuration(undefined);
     setMolesOption(undefined);
   }
@@ -129,7 +117,9 @@ export const HitTheMoleGame = () => {
         <>
           <div className="mole-controls-panel">
             <Label>Czas do końca</Label>
-            <Output>{formatTime(timeLeft)}</Output>
+            <Output>
+              <MoleTimer duration={duration} handleFinish={handleFinish} />
+            </Output>
           </div>
           <div className="mole-controls-panel">
             <Label>Wynik</Label>
