@@ -7,18 +7,29 @@
 }
 
 .memo-tile--neutral {
-  background: var(--gray-200, #ebebeb);
-}
-
-.memo-tile--incorrect {
-  background: var(--colors-actions-danger-light, #f3aea8);
+  background: #ebebeb;
 }
 
 .memo-tile--correct {
-  background: var(--colors-actions-success-light, #e2fbd7);
+  background: #e2fbd7;
 }
-/* .memo-tile--has-memo {
-  background-image: url('./mole.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-} */
+
+.memo-tile--incorrect {
+  background: #f3aea8;
+}
+
+.memo-letter {
+  user-select: none;
+  transform: scaleX(0);
+  font-size: 4rem;
+  text-align: center;
+  line-height: 6.5rem;
+  transition: 300ms;
+}
+
+.memo-letter-is-visible {
+  transform: scaleX(1);
+  /* background-image: url("./memo.svg");
+    background-repeat: no-repeat;
+    background-position: center; */
+}

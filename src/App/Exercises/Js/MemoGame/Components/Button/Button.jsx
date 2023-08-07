@@ -7,12 +7,10 @@ export const Button = ({ value, variant = 'primary', onClick }) => {
       variant === 'secondary' ||
       variant === 'tertiary'
     )
-  ) {
-    console.log('błędny parametr variant', variant);
-  }
-
+  )
+    console.warn('błędny parametr variant', variant);
   return (
-    <button className={`memo-btn memo-btn--${variant}`} onClick={onClick}>
+    <button className={`memo-Button memo-Button--${variant}`} onClick={onClick}>
       {value}
     </button>
   );

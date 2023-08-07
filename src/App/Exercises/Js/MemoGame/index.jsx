@@ -1,19 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Button, Label, Output, Result } from './Components';
 import { MasterHeader } from '../../../Components/MasterHeader/MasterHeader';
-import { Label, Button, Output, Results } from './Components';
+import { formatTime, getAlphabet, shuffle } from './Utilities';
+import { HighScore } from './Features/HighScore';
 import { Tile } from './Features/Tile/Tile';
-
 import './styles.css';
-import { formatTime, getAlphabet } from './Utilities';
+// import { isVisible } from '@testing-library/user-event/dist/utils';
 
-const ELEMENTS = [2, 16, 20];
+const ELEMENTS = [4, 16, 20];
 // const LETTERS = [...'ABCDEFGHIJ'];
 const characters = getAlphabet(10);
-
 export const MemoGame = () => {
+  // console.log(characters);
   // console.log(LETTERS.map((char) => char.charCodeAt(0)));
-  // console.log(charachters);
-
   const [status, setStatus] = useState('notStarted'); // notStarted || started || passed || finished
   const [tiles, setTiles] = useState([]);
   const [noOfElements, setNoOfElements] = useState();
@@ -22,17 +21,18 @@ export const MemoGame = () => {
   const [time, setTime] = useState(0);
   const [score, setScore] = useState(0);
   const [found, setFound] = useState(0);
-  const [resultMessage, setResultMessage] = useState();
-  const [fisrtClick, setFirstClick] = useState();
+  const [firstClick, setFirstClick] = useState();
   const [secondClick, setSecondClick] = useState();
 
   function getInitialTiles(size) {
     const charactersSubset = characters.slice(0, size / 2);
     const allCharacters = [...charactersSubset, ...charactersSubset];
-    const characterObject = allCharacters.map((character, index) => {
-      return { index, value: character };
+    // const shuffledCharacters = allCharacters.sort(() => Math.random() - 0.5);
+    const shuffledCharacters = shuffle(allCharacters);
+    const characterObject = shuffledCharacters.map((character, index) => {
+      return { index, value: character, isVisible: false, variant: 'neutral' };
     });
-    console.log(characterObject);
+    // console.log(characterObject);
     return characterObject;
   }
 
@@ -43,19 +43,106 @@ export const MemoGame = () => {
       setShowWarning(false);
       setScore(0);
       setTime(0);
+      setFound(0);
+      setPrevNoOfElements(noOfElements);
     } else {
       setShowWarning(true);
     }
   }
-
   function handlePass() {
     setStatus('passed');
     setNoOfElements(undefined);
   }
 
-  function handleTileClicked() {
-    setScore((prev) => prev + 1);
+  function handleTileClicked(index) {
+    if (tiles.some((tile) => tile.index === index && tile.isVisible === true))
+      return;
+    setTiles((oldTiles) => {
+      const newTiles = oldTiles.map((tile) =>
+        tile.index === index ? { ...tile, isVisible: true } : tile
+      );
+      // const newTiles = [...oldTiles];
+      // const toBeUpdated = newTiles[index];
+      // newTiles[index] = { ...toBeUpdated, isVisible: true };
+      // console.log(
+      //   'new tiles',
+      //   JSON.stringify(newTiles),
+      //   'index',
+      //   index,
+      //   'toBeUpdated',
+      //   JSON.stringify(toBeUpdated)
+      // );
+      return newTiles;
+      // const newTiles
+    });
+
+    if (firstClick === undefined) {
+      setFirstClick(index);
+    } else {
+      setSecondClick(index);
+    }
   }
+
+  function handleResetIncorrect(index) {
+    setTiles((oldTiles) => {
+      const newTiles = oldTiles.map((tile) =>
+        tile.index === index
+          ? { ...tile, isVisible: false, variant: 'neutral' }
+          : tile
+      );
+      return newTiles;
+    });
+  }
+  useEffect(() => {
+    if (firstClick !== undefined && secondClick !== undefined) {
+      setScore((prev) => prev + 1);
+      setTiles((oldTiles) => {
+        const newTiles = [...oldTiles];
+        const first = newTiles[firstClick];
+        const second = newTiles[secondClick];
+        let variant = 'neutral';
+        if (first.value === second.value) {
+          variant = 'correct';
+        } else {
+          variant = 'incorrect';
+        }
+        newTiles[firstClick] = { ...first, variant };
+        newTiles[secondClick] = { ...second, variant };
+        // console.log(JSON.stringify(first), JSON.stringify(second));
+        return newTiles;
+      });
+      setFirstClick(undefined);
+      setSecondClick(undefined);
+    }
+  }, [firstClick, secondClick]);
+
+  useEffect(() => {
+    if (
+      prevNoOfElements ===
+      tiles.filter((tile) => tile.variant === 'correct').length
+    ) {
+      setStatus('finished');
+    }
+
+    //Ustawianie liczby znalezionych par
+    setFound(tiles.filter((tile) => tile.variant === 'correct').length / 2);
+
+    //Sprawdzanie niepoprawnych kafelków
+    let timeoutIdArray = [];
+    tiles
+      .filter((tile) => tile.variant === 'incorrect')
+      .forEach((tile) => {
+        const timeoutId = setTimeout(handleResetIncorrect, 500, tile.index);
+        // console.log('setTimeout ID = ',timeoutId);
+        timeoutIdArray.push(timeoutId);
+      });
+    // console.log('na końcu useEffect',JSON.stringify(timeoutIdArray));
+    return () =>
+      timeoutIdArray.forEach((id) => {
+        clearTimeout(id);
+      });
+  }, [prevNoOfElements, tiles]);
+
   useEffect(() => {
     let intervalId;
     if (status === 'started') {
@@ -71,18 +158,28 @@ export const MemoGame = () => {
     <div>
       <MasterHeader value="Memo" />
       <p>
-        Status: {status} Liczba elementów: {noOfElements}
+        Gra polegająca na zapamiętywaniu odkrytych kafli i łączeniu ich w pary
       </p>
-      <p>
-        Gra polegająca na zapamiętywaniu odkrytych kafli i łączeniu ich w pary.
-      </p>
-      <div>
-        {(status === 'passed' || status === 'finished') && (
-          <Results>Gratulacje! Twój wynik to 8 par w czasie 0:56!</Results>
-        )}
-      </div>
+      {/* <p>
+        status:<span className="memo-info">{status}</span> Licza elementów:
+        <span className="memo-info"> {noOfElements}</span>
+      </p> */}
+      {status === 'passed' && (
+        <Result>
+          Zgadłeś {found} na {prevNoOfElements / 2} par w czasie{' '}
+          {formatTime(time)}, w {score} odsłonach. Powodzenia następnym razem!
+        </Result>
+      )}
+      {status === 'finished' && (
+        <>
+          <Result>
+            Gratulacje! Twój wynik to {score} odsłon w czasie {formatTime(time)}
+          </Result>
+          <HighScore score={score} time={time} />
+        </>
+      )}
 
-      {showWarning && <p className="mole-warning">Brakuje ustawień gry</p>}
+      {showWarning && <p className="memo-warning">Brakuje ustawień gry !!!</p>}
 
       {status !== 'started' && (
         <>
@@ -91,7 +188,7 @@ export const MemoGame = () => {
             {ELEMENTS.map((element) => (
               <Button
                 key={element}
-                value={element + ' elementów'}
+                value={element + ' Elementów'}
                 onClick={() => setNoOfElements(element)}
                 variant={element !== noOfElements ? 'primary' : 'secondary'}
               />
@@ -99,7 +196,7 @@ export const MemoGame = () => {
           </div>
           <div className="memo-controls-panel">
             <Label>Przyciski sterujące</Label>
-            <Button value="Start" onClick={() => handleStart()} />
+            <Button value="START" onClick={handleStart}></Button>
           </div>
         </>
       )}
@@ -113,20 +210,28 @@ export const MemoGame = () => {
             <Label>Liczba ruchów</Label>
             <Output>{score}</Output>
           </div>
+
           <div className="memo-controls-panel">
             <Label>Przyciski sterujące</Label>
             <Button
               value="Pass"
               variant="tertiary"
-              onClick={() => handlePass()}
-            />
+              onClick={handlePass}
+            ></Button>
           </div>
         </>
       )}
-      {status === 'started' && (
+
+      {(status === 'started' || status === 'finished') && (
         <div className="memo-game-panel">
-          {tiles.map(({ index, value }) => (
-            <Tile key={index} value={value} onClick={handleTileClicked} />
+          {tiles.map(({ index, value, isVisible, variant }) => (
+            <Tile
+              key={index}
+              value={value}
+              onClick={() => handleTileClicked(index)}
+              isVisible={isVisible}
+              variant={variant}
+            />
           ))}
         </div>
       )}

@@ -1,35 +1,36 @@
-.memo-btn {
-  display: flex;
-  height: 3.5rem;
-  padding: 0;
-  width: 10rem;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 0.5rem;
+.memo-Button {
+  border-radius: 8px;
+
   color: #fff;
-  font-family: Poppins;
-  font-size: 1.13rem;
+  display: flex;
+  height: 56px;
+  width: 10rem;
+  align-items: center;
+  padding: 0;
+  justify-content: center;
+  gap: 16px;
+
+  font-size: 18px;
   font-weight: 500;
   cursor: pointer;
 }
 
-.memo-btn:hover {
+.memo-Button:hover {
   opacity: 0.8;
+  /* background-color: red; */
 }
 
-.memo-btn--primary {
+.memo-Button--primary {
   border: 1px solid #23213d;
   background: #23213d;
 }
 
-.memo-btn--secondary {
+.memo-Button--secondary {
   border: 1px solid #fe3756;
   background: #fe3756;
 }
 
-.memo-btn--tertiary {
-  border: 1px solid #e12b1b;
-  background: #e12b1b;
-  text-transform: uppercase;
+.memo-Button--tertiary {
+  border: 1px solid red;
+  background-color: red;
 }
