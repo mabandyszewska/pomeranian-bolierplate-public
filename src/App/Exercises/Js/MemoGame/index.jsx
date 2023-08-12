@@ -37,12 +37,8 @@ export const MemoGame = () => {
     if (status === 'finished' && prevNoOfElements === noOfElements) {
       const currentMoves = score;
       const currentTime = time;
-      const currentRecord = (60 * currentMoves) / currentTime; // 0.04 * 100 = 4s
+      const currentRecord = (6000 * currentMoves) / currentTime; // 0.04 * 100 = 4s
 
-      console.log(
-        'condition--->',
-        currentRecord > getHighScores?.[noOfElements]?.record
-      );
       const previousRecord = getHighScores?.[noOfElements]?.record;
       console.log({
         previousRecord,
@@ -56,6 +52,7 @@ export const MemoGame = () => {
             record: currentRecord,
             moves: currentMoves,
             time: currentTime,
+            previousRecord,
           },
         }));
 
@@ -64,7 +61,7 @@ export const MemoGame = () => {
         }
       }
     }
-  }, [status]);
+  }, [status, prevNoOfElements, noOfElements]);
 
   function getInitialTiles(size) {
     const charactersSubset = characters.slice(0, size / 2);
@@ -88,6 +85,7 @@ export const MemoGame = () => {
       setTime(0);
       setFound(0);
       setPrevNoOfElements(noOfElements);
+      setIsVisibleRecord(false);
     } else {
       setShowWarning(true);
     }
@@ -220,9 +218,7 @@ export const MemoGame = () => {
           <Result>
             Gratulacje! Twój wynik to {score} odsłon w czasie {formatTime(time)}
           </Result>
-          {/* Gratulacje! Pobideś rekord! Twoje punksty:{' '}
-          {getCalculatedScore.toFixed(2)}, poprzedni rekord:{' '}
-          {getHighScores?.[noOfElements]?.record?.toFixed(2)} */}
+
           <HighScore
             highScores={getHighScores}
             calculatedScore={getCalculatedScore}

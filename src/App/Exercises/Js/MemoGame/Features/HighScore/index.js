@@ -1,5 +1,5 @@
 import { Button } from '../../Components/Button/Button';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import './styles.css';
 
 const TYPE_OF_GAME_HIGHSCORE_4 = 4;
@@ -18,20 +18,18 @@ export function HighScore({
 }) {
   const [isVisible, setIsVisible] = useState(false);
 
-  console.log('isVisibleRecord------>', isVisibleRecord);
+  const recordInfo = useMemo(() => {
+    const currentScores = highScores?.[noOfElements];
+    const currentRecord = currentScores?.record?.toFixed(0);
+    const previousRecord = currentScores?.previousRecord?.toFixed(0);
+
+    return `Gratulacje! Pobiłeś rekord! Twoje punkty to: ${currentRecord}, poprzedni rekord to: ${previousRecord}`;
+  }, [highScores, noOfElements]);
 
   return (
     <div className="memo-high-score">
       <div className="memo-congrats">
-        {isVisibleRecord && (
-          <p>
-            {`Gratulacje! Pobiłeś rekord! Twoje punkty to: ${calculatedScore?.toFixed(
-              2
-            )}, poprzedni rekord to: ${highScores?.[
-              noOfElements
-            ]?.record?.toFixed(2)}`}
-          </p>
-        )}
+        {isVisibleRecord && <p>{recordInfo}</p>}
       </div>
       <Button
         value={isVisible ? 'Hide High Score' : 'Show High Score'}
