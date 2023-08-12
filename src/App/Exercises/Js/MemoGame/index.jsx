@@ -61,6 +61,7 @@ export const MemoGame = () => {
         }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status, prevNoOfElements, noOfElements]);
 
   function getInitialTiles(size) {
