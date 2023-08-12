@@ -23,6 +23,7 @@ export function Exercise() {
 
   // DODAWANIE +
   const sum = 5 + 3; // 8
+  // eslint-disable-next-line no-useless-concat
   const fullName = 'John' + ' ' + 'Wick';
 
   // ODEJMOWANIE -
@@ -32,6 +33,7 @@ export function Exercise() {
   const multiply = 5 * 3; // 15
 
   // DZIELENIE /
+  // eslint-disable-next-line no-unused-vars
   const division = 5 / 3; // 1.666...
 
   // RESZTA Z DZIELENIA %
