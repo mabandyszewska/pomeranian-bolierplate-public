@@ -3,7 +3,7 @@ import './styles.css';
 
 export const NicknameList = () => {
   const [nicknames, setNicknames] = useState([]);
-  const [idCounter, setIdCounter] = useState(0);
+  const [idCounter, setIdCounter] = useState(1);
   const [newNickname, setNewNickname] = useState('');
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const NicknameList = () => {
     <div className="localstorage-container">
       <div className="localstorage-input-container">
         <label htmlFor="nick" className="localstorage-input-label">
-          NICK:
+          NICK
         </label>
         <input
           id="nick"
@@ -56,12 +56,14 @@ export const NicknameList = () => {
           placeholder="Enter a nickname"
           value={newNickname}
           onChange={(e) => setNewNickname(e.target.value)}
-        />{' '}
+        />
+        <div>
+          <button className="localstorage-add-btn" onClick={handleAddNickname}>
+            Add
+          </button>
+        </div>
       </div>
-      <button className="localstorage-add-btn" onClick={handleAddNickname}>
-        Add
-      </button>
-      <div></div>
+
       {nicknames.length > 0 && (
         <div className="localstorage-list-container">
           <ul>

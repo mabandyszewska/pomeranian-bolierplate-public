@@ -1,17 +1,18 @@
 .localstorage-container {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-direction: row;
+  gap: 8rem;
 }
 .localstorage-input-container {
+  width: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 1rem;
   gap: 1rem;
   color: var(--gray-500, #999);
   margin-bottom: auto;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 
   && input {
     padding: 0.5rem;
@@ -31,39 +32,42 @@
   font-size: 1.5rem;
   font-weight: 500;
   display: flex;
+  width: 11rem;
   margin-bottom: auto;
   padding: 1rem 2rem;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  flex: 1 0 0;
   border-radius: 0.5rem;
   border: 1px solid var(--primary-primary, #fe3756);
   background: var(--primary-primary, #fe3756);
+  cursor: pointer;
 }
 
 .localstorage-list-container {
   display: flex;
+
   padding: 1rem;
   gap: 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--gray-300, #c8cbd1);
   background: rgba(217, 217, 217, 0);
   align-items: center;
+}
+.localstorage-list-container ul {
+  margin: 0;
+  padding: 0;
+  width: 15rem;
+}
 
-  && ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  && li {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    list-style: none;
-    align-items: center;
-    color: var(--text-text-primary, #222);
-  }
+.localstorage-list-container li {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  align-items: center;
+  color: var(--text-text-primary, #222);
+  justify-content: space-between;
 }
 
 .localstorage-list-container .localstorage-delete-btn {
@@ -79,4 +83,5 @@
   color: #fff;
   font-size: 1.3rem;
   font-weight: 700;
+  cursor: pointer;
 }
