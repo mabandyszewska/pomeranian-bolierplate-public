@@ -13,7 +13,7 @@ export const MyData = () => {
 
         <div className="telephone-container">
           <p>telefon:</p>
-          <p>509 793 401</p>
+          <p>(+48) 509 793 401</p>
         </div>
       </div>
     </div>

@@ -6,8 +6,7 @@ h1 {
   font-weight: 700;
   line-height: 34px; /* 188.889% */
 }
-
-p {
+.paragraph {
   color: var(--text-text-primary, #222);
   font-family: Poppins;
   font-size: 16px;

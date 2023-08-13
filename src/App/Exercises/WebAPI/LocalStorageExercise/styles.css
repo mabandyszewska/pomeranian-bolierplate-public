@@ -1,0 +1,82 @@
+.localstorage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.localstorage-input-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 1rem;
+  color: var(--gray-500, #999);
+  margin-bottom: auto;
+  justify-content: flex-start;
+  align-items: center;
+
+  && input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+}
+.localstorage-input-label {
+  display: flex;
+  color: var(--text-text-primary, #222);
+  font-style: bold;
+  font-weight: 700;
+  line-height: 1.6rem;
+}
+.localstorage-add-btn {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  margin-bottom: auto;
+  padding: 1rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex: 1 0 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-primary, #fe3756);
+  background: var(--primary-primary, #fe3756);
+}
+
+.localstorage-list-container {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-300, #c8cbd1);
+  background: rgba(217, 217, 217, 0);
+  align-items: center;
+
+  && ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  && li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    align-items: center;
+    color: var(--text-text-primary, #222);
+  }
+}
+
+.localstorage-list-container .localstorage-delete-btn {
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-primary, #fe3756);
+  background: var(--primary-primary, #fe3756);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}

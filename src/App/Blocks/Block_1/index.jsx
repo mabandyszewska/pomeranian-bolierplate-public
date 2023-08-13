@@ -8,7 +8,7 @@ export function Block() {
       <p>Słowa kluczowe: serwer, adres IP, DNS, ...</p>
       <p>linki:</p>
       <ul>
-        <li>- link do dokumentacji</li>
+        <li> - link do dokumentacji</li>
       </ul>
       <p>ewentualnie zdjęcia</p>
     </>

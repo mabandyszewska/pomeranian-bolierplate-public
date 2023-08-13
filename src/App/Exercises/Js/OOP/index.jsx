@@ -240,6 +240,7 @@ export const ExerciseOOP = () => {
   // Kompozycja skupia się na tworzeniu obiektów poprzez łączenie ich komponentów.
 
   // dziedziczenie
+
   class AnimalInheritence {
     speak() {
       console.log('Animal makes a noise');
