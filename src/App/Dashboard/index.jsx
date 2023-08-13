@@ -1,11 +1,11 @@
 import './styles.css';
 import { MyData } from '../Dashboard/MyData/MyData';
-import { Blocks } from '../Dashboard/Blocks/Blocks';
+import { Tiles } from '../Dashboard/Tiles/Tiles';
 
 export const Dashboard = () => {
   return (
     <div className="dashboard">
-      <Blocks />
+      <Tiles />
       <MyData />
     </div>
   );

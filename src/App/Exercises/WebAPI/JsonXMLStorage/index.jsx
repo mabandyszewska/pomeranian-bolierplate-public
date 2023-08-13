@@ -69,6 +69,23 @@ export const JsonXMLStorage = () => {
   // string, number, boolean, object, array, null
   // w JSONie nazwy właściwości muszą być w cudzysłowiu np "name": "John"
 
+  // -----------------------------------------------------------------------------
+  // LINKI POMOCNICZE
+  // -----------------------------------------------------------------------------
+
+  // https://www.oracle.com/pl/database/what-is-json/
+  // https://developer.mozilla.org/en-US/docs/Glossary/XML
+  // https://appmaster.io/blog/json-vs-xml
+  // https://www.w3schools.com/js/js_json_stringify.asp
+  // https://frontstack.pl/czym-jest-local-storage-i-jak-uzywac/
+  // https://www.w3schools.com/jsref/prop_win_sessionstorage.asp
+  // https://www.geeksforgeeks.org/difference-between-local-storage-session-storage-and-cookies
+  // https://www.w3schools.com/js/js_cookies.asp
+  // https://javascript.info/eval
+  // https://javascript.info/json
+  // https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML
+  // https://geshan.com.np/blog/2022/11/nodejs-xml-parser/
+
   return (
     <div>
       JSON XML STORAGE

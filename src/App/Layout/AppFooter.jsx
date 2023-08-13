@@ -1,18 +1,19 @@
 import './styles/footer.css';
 
-const email = 'twoj-email@pomeranian.it';
-const phone = '+48-999-999-999';
+const email = 'marta.bandyszewska@pomeranian.it';
+const phone = '+48-509-793-401';
 
 export function AppFooter() {
   return (
     <footer>
       <div>
-        Projekt uzyskał dofinansowanie ze środków Unii Europejskiej z
-        Europejskiego Funduszu Rozwoju
+        The project has received funding from the European Union from the
+        European Development Fund.
       </div>
       <a href={`mailto:${email}`}>{`Email: ${email}`}</a>
       <div>
-        Regionalnego w ramach projektu grantowego „Invest in Pomerania 2020”.
+        Regional within the framework of the Invest in Pomerania 2020 grant
+        project.
       </div>
       <a href={`tel:${phone}`}>{`Tel: ${phone}`}</a>
     </footer>
