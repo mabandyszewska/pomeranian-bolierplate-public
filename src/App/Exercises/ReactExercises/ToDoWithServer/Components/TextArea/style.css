@@ -1,0 +1,5 @@
+.todo-form--textarea {
+  resize: none;
+  min-height: 8rem;
+  font-family: Poppins;
+}

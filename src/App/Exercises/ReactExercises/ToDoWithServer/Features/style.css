@@ -1,0 +1,15 @@
+.todo-form-container {
+  max-width: 30.5rem;
+  width: 100%;
+}
+.todo-form-btn {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: flex-end;
+}
+.todo-form-error {
+  color: var(--colors-actions-danger, #e12b1b);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-weight: 600;
+  line-height: 1.7rem;
+}

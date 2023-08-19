@@ -1,0 +1,12 @@
+.todo-form--label {
+  color: var(--text-text-primary, #222);
+  font-weight: 700;
+  line-height: 1.7rem;
+  display: flex;
+  padding-left: 0px;
+  align-items: center;
+  gap: 0.13rem;
+  align-self: stretch;
+  margin-left: 0.19rem;
+  margin-bottom: 0.38rem;
+}
