@@ -9,3 +9,6 @@
   background-color: var(--color-primary-blue);
   color: var(--color-white);
 }
+ul {
+  list-style: none;
+}

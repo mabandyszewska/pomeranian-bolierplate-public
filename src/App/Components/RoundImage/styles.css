@@ -1,5 +1,5 @@
 .round-image {
-  background: no-repeat url('../../Images/portret-marta.jpg');
+  background: url('../../Images/portret-marta.jpg');
   background-position: 50%;
   background-size: 100%;
   width: 7rem;

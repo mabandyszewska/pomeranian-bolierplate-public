@@ -1,4 +1,6 @@
 import './styles.css';
+
+import { RoundImage } from '../RoundImage/RoundImage';
 import { SettingIcon } from '../Icons/SettingIcon';
 import { ChevronDownIcon } from '../Icons/ChevronDownIcon';
 
@@ -9,11 +11,7 @@ export const HeaderMenu = () => {
 
       {/* wykorzystać komponent RoundImage */}
       <div className="circular_image">
-        <img
-          src="http://placekitten.com/500/500"
-          className="logo"
-          alt="kitten"
-        />
+        <RoundImage />
       </div>
 
       <div className="name-surname-cntainer">

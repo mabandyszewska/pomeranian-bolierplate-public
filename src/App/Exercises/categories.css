@@ -1,3 +1,5 @@
 .exercises-categories > * {
   display: list-item;
+  list-style: none;
+  text-decoration: none;
 }

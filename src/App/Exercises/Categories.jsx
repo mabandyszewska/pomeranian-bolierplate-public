@@ -10,7 +10,7 @@ export const Categories = () => {
         <h2>Kategorie</h2>
 
         <NavLink to="html-css">HTML & CSS - lista ćwiczeń</NavLink>
-        <NavLink to="js">JS - lista ćwiczeń</NavLink>
+        <NavLink to="js">JavaScript - lista ćwiczeń</NavLink>
         <NavLink to="react">React - lista ćwiczeń</NavLink>
         <NavLink to="web-api">Web API - lista ćwiczeń</NavLink>
         <NavLink to="async">Asynchroniczność - lista ćwiczeń</NavLink>

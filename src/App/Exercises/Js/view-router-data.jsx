@@ -26,6 +26,12 @@ import { blockRouterMetaData as blockRouterMetaMemoGame } from './MemoGame/route
 import { blockRouterMetaData as blockRouterMetaOOP } from './OOP/router-data';
 import { blockRouterMetaData as blockRouterMetaTryCatchPrototype } from './TryCatchPrototype/router-data';
 import { blockRouterMetaData as blockRouterMetaasyncAwaitExercise } from './AsyncAwait/router-data';
+import { blockRouterMetaData as blockRouterMetaJsonXmlStorage } from '../Js/JsonXMLStorage/router-data';
+import { blockRouterMetaData as blockRouterMetaLocalStorageExercise } from '../LocalStorageExercise/router-data';
+import { blockRouterMetaData as blockRouterMetaPromises } from '../Js/Promises/router-data';
+import { blockRouterMetaData as blockRouterMetaUseEffectAndPromise } from '../Js/UseEffectAndPromise/router-data';
+import { blockRouterMetaData as blockRouterMetaUserDataLoader } from '../Js/UserDataLoader/router-data';
+
 export const blockRouterMetaData = [
   blockRouterMetaDataJsVariables1,
   blockRouterMetaDataJsVariables2,
@@ -53,6 +59,11 @@ export const blockRouterMetaData = [
   blockRouterMetaOOP,
   blockRouterMetaTryCatchPrototype,
   blockRouterMetaasyncAwaitExercise,
+  blockRouterMetaJsonXmlStorage,
+  blockRouterMetaLocalStorageExercise,
+  blockRouterMetaPromises,
+  blockRouterMetaUseEffectAndPromise,
+  blockRouterMetaUserDataLoader,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
