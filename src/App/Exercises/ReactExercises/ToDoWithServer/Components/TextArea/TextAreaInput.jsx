@@ -1,6 +1,6 @@
 import './style.css';
 
-export const TextAreaInput = ({ id, value, placeholder }) => {
+export const TextAreaInput = ({ onChange, id, value, placeholder }) => {
   return (
     <textarea
       className="todo-form--input todo-form--textarea"
@@ -8,6 +8,7 @@ export const TextAreaInput = ({ id, value, placeholder }) => {
       value={value}
       placeholder={placeholder}
       type="text"
+      onChange={onChange}
     />
   );
 };

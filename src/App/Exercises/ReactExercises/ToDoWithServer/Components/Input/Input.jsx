@@ -1,6 +1,6 @@
 import './style.css';
 
-export const Input = ({ id, value, placeholder }) => {
+export const Input = ({ onChange, id, value, placeholder }) => {
   return (
     <input
       className={'todo-form--input'}
@@ -8,6 +8,7 @@ export const Input = ({ id, value, placeholder }) => {
       value={value}
       placeholder={placeholder}
       type="text"
+      onChange={onChange}
     />
   );
 };
