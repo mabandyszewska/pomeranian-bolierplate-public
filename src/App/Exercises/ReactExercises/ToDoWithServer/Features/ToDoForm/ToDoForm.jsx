@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Button, Input, Label, TextAreaInput } from '../Components';
+import { Button, Input, Label, TextAreaInput } from '../../Components';
 import './style.css';
 
-export const ToDoForm = () => {
+export const ToDoForm = ({ handleGoBack }) => {
   const [isError, setIsError] = useState(false);
   const handleAdd = (event) => {
     event.preventDefault();
@@ -14,7 +14,6 @@ export const ToDoForm = () => {
       setIsError(true);
     }
   };
-  const handleGoBack = () => {};
 
   return (
     <div className="todo-form-container">
@@ -31,9 +30,11 @@ export const ToDoForm = () => {
             'Zmierzyć ile mamy miejsca na balkonie od barierki do kanapy i ile musi mieć max średnicy - miarka!!'
           }
         />
-        {isError && (
-          <p className="todo-form-error">Wystąpił błąd, spróbuj ponownie.</p>
-        )}
+
+        <p className="todo-form-error">
+          {isError && 'Wystąpił błąd, spróbuj ponownie.'}
+        </p>
+
         <div className="todo-form-btn">
           <Button type="reset" onClick={handleGoBack} variant="secondary">
             Cofnij

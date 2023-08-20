@@ -1,0 +1,8 @@
+.todo-list {
+  max-width: 39.3rem;
+}
+.todo-list-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.625rem;
+}
