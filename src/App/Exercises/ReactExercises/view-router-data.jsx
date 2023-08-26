@@ -11,6 +11,8 @@ import { MUITemplateDashboardMetaData } from './MUITemplateDashboard/router-data
 import { ToDoListMetaData } from './ToDoList/router-data';
 import { LocalDevAndFetchMetaData } from './LocalDevAndFetch/router-data';
 import { ToDoWithServerMetaData } from './ToDoWithServer/router-data';
+import { BasicFormsMetaData } from './BasicForms/router-data';
+import { BasicFormsV2MetaData } from './BasicFormsV2/router-data';
 export const blockRouterMetaData = [
   SubRouteExampleMetaData,
   Cwiczenie1MetaData,
@@ -23,6 +25,8 @@ export const blockRouterMetaData = [
   ToDoListMetaData,
   LocalDevAndFetchMetaData,
   ToDoWithServerMetaData,
+  BasicFormsMetaData,
+  BasicFormsV2MetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
