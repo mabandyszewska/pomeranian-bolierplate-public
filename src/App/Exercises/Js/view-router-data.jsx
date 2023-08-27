@@ -31,7 +31,7 @@ import { blockRouterMetaData as blockRouterMetaLocalStorageExercise } from '../L
 import { blockRouterMetaData as blockRouterMetaPromises } from '../Js/Promises/router-data';
 import { blockRouterMetaData as blockRouterMetaUseEffectAndPromise } from '../Js/UseEffectAndPromise/router-data';
 import { blockRouterMetaData as blockRouterMetaUserDataLoader } from '../Js/UserDataLoader/router-data';
-
+import { blockRouterMetaData as blockRouterMetaDOM } from '../Js/DOM/router-data';
 export const blockRouterMetaData = [
   blockRouterMetaDataJsVariables1,
   blockRouterMetaDataJsVariables2,
@@ -64,6 +64,7 @@ export const blockRouterMetaData = [
   blockRouterMetaPromises,
   blockRouterMetaUseEffectAndPromise,
   blockRouterMetaUserDataLoader,
+  blockRouterMetaDOM,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);

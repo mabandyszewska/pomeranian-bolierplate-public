@@ -13,6 +13,8 @@ import { LocalDevAndFetchMetaData } from './LocalDevAndFetch/router-data';
 import { ToDoWithServerMetaData } from './ToDoWithServer/router-data';
 import { BasicFormsMetaData } from './BasicForms/router-data';
 import { BasicFormsV2MetaData } from './BasicFormsV2/router-data';
+import { FirebaseExerciseMetaData } from './FirebaseExercise/router-data';
+
 export const blockRouterMetaData = [
   SubRouteExampleMetaData,
   Cwiczenie1MetaData,
@@ -27,6 +29,7 @@ export const blockRouterMetaData = [
   ToDoWithServerMetaData,
   BasicFormsMetaData,
   BasicFormsV2MetaData,
+  FirebaseExerciseMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);

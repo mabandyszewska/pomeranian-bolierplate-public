@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p>Punkt 1</p>
+      <button id="myButton" onclick="changeTextValue()">Kliknij we mnie</button>
+    </div>
+    <div>
+      <p>Punkt 2</p>
+      <button onclick="toggleDiv()">Toggle Div</button>
+      <div id="myDiv">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+          veritatis magnam odio voluptatibus provident repellendus
+          exercitationem, inventore itaque, quae ad mollitia officiis dolorum
+          error animi atque id quo corporis molestiae!
+        </p>
+      </div>
+    </div>
+    <div>
+      <p>Punkt 3</p>
+      <button onclick="addNewDiv()">Add New Div</button>
+
+      <div id="container">
+        <!-- Existing div elements will be placed here -->
+      </div>
+    </div>
+    <div>
+      <p>Punkt 4</p>
+      <button id="clickButton" onclick="countClicks()">Click Me</button>
+      <p>Click count: <span id="clickCount">0</span></p>
+    </div>
+
+    <script>
+      // punkt 1
+      function changeTextValue() {
+        const buttonTextChange = document.getElementById('myButton');
+        buttonTextChange.textContent = 'Kliknięto we mnie';
+      }
+      // punkt 2
+      function toggleDiv() {
+        const div = document.getElementById('myDiv');
+        if (div.style.display === 'none' || div.style.display === '') {
+          div.style.display = 'block';
+        } else {
+          div.style.display = 'none';
+        }
+      }
+      // punkt 3
+      function addNewDiv() {
+        const container = document.getElementById('container');
+
+        const newDiv = document.createElement('div');
+        newDiv.textContent = 'There is a lot of us';
+
+        container.appendChild(newDiv);
+      }
+      // punkt 4
+      let clickCount = 0;
+
+      function countClicks() {
+        clickCount++;
+        const clickCountSpan = document.getElementById('clickCount');
+        clickCountSpan.textContent = clickCount;
+      }
+    </script>
+  </body>
+</html>
