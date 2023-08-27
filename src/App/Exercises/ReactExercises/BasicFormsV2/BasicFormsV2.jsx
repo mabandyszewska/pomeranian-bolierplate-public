@@ -135,7 +135,7 @@ export function BasicFormsV2() {
           <div className="form-input-container">
             <label>Wybierz formę płatności*</label>
             <div>
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('paymentMethod')}
                   type="radio"
@@ -144,7 +144,7 @@ export function BasicFormsV2() {
                 <span>blik</span>
               </div>
 
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('paymentMethod')}
                   type="radio"
@@ -153,7 +153,7 @@ export function BasicFormsV2() {
                 <span>paypal</span>
               </div>
 
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('paymentMethod')}
                   type="radio"
