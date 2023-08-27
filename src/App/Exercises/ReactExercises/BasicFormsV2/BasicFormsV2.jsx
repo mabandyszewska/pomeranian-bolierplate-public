@@ -111,13 +111,20 @@ export function BasicFormsV2() {
   return (
     <div>
       <MasterHeader value="Formularz zamówienia" />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="shopping-form-container"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         {/* Zamówienie produktu */}
-        <div>
+        <div className="form-input-container">
           <h2>Zamówienie produktu</h2>
-          <div>
+          <div className="form-input-container">
             <label htmlFor="productType">Wybierz produkt*</label>
-            <select {...register('productType')} name="productType">
+            <select
+              className="form-input"
+              {...register('productType')}
+              name="productType"
+            >
               <option value="frontend">kurs front-end</option>
               <option value="backend">kurs back-end</option>
               <option value="ux_ui">kurs UX/UI</option>
@@ -125,7 +132,7 @@ export function BasicFormsV2() {
             {errors.productType && <p>{errors.productType.message}</p>}
           </div>
 
-          <div>
+          <div className="form-input-container">
             <label>Wybierz formę płatności*</label>
             <div>
               <div>
@@ -154,38 +161,45 @@ export function BasicFormsV2() {
                 />
                 <span>przelew tradycyjny</span>
               </div>
-              {errors.paymentMethod && <p>{errors.paymentMethod.message}</p>}
+              {errors.paymentMethod && (
+                <p className="form-error-mess">
+                  {errors.paymentMethod.message}
+                </p>
+              )}
             </div>
           </div>
 
-          <div>
+          <div className="form-input-container form--spacing">
             <label htmlFor="orderInformations">
               Opcje dodatkowe do zamówienia
             </label>
             <div>
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('isEnvChecked')}
                   name="orderInformations"
                   type="checkbox"
+                  className="check-box"
                 />
                 <span>ustawienie środowiska</span>
               </div>
 
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('isGithubChecked')}
                   name="orderInformations"
                   type="checkbox"
+                  className="check-box"
                 />
                 <span>intro do github</span>
               </div>
 
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('isAdditionalDataChecked')}
                   name="orderInformations"
                   type="checkbox"
+                  className="check-box"
                 />
                 <span>materiały dodatkowe</span>
               </div>
@@ -196,162 +210,197 @@ export function BasicFormsV2() {
         {/* Dane do realizacji zamówienia */}
         <div>
           <h2>Dane do realizacji zamówienia</h2>
-          <div>
+          <div className="form-input-container">
             <label htmlFor="name">Imię i nazwisko*</label>
             <input
               {...register('name')}
               name="name"
               type="text"
               placeholder="Wpisz swoje imię i nazwisko"
+              className={`form-delivery-data ${
+                errors.name ? 'input-error' : ''
+              }`}
               aria-invalid={errors.name ? 'true' : 'false'}
             />
-            {errors.name && <p>{errors.name.message}</p>}
+            {errors.name && (
+              <p className="form-error-mess">{errors.name.message}</p>
+            )}
           </div>
 
-          <div>
+          <div className="form-input-container">
             <label htmlFor="nickname">Twój pseudonim*</label>
             <input
               {...register('nickname')}
               name="nickname"
               type="text"
               placeholder="Wpisz swój pseudonim"
+              className="form-delivery-data"
               aria-invalid={errors.nickname ? 'true' : 'false'}
             />
-            {errors.nickname && <p>{errors.nickname.message}</p>}
+            {errors.nickname && (
+              <p className="form-error-mess">{errors.nickname.message}</p>
+            )}
           </div>
 
-          <div>
+          <div className="form-input-container">
             <label htmlFor="address">Adres do wysyłki*</label>
             <input
               {...register('address')}
               name="address"
+              className="form-delivery-data"
               type="text"
               placeholder="Wpisz adres na jaki mamy wysłać zamówienie"
               aria-invalid={errors.address ? 'true' : 'false'}
             />
-            {errors.address && <p>{errors.address.message}</p>}
+            {errors.address && (
+              <p className="form-error-mess">{errors.address.message}</p>
+            )}
           </div>
 
-          <div>
+          <div className="form-input-container">
             <label htmlFor="email">Adres email*</label>
             <input
               {...register('email')}
               name="email"
+              className="form-delivery-data"
               type="email"
               placeholder="Wpisz swój adres email"
               aria-invalid={errors.email ? 'true' : 'false'}
             />
-            {errors.email && <p>{errors.email.message}</p>}
+            {errors.email && (
+              <p className="form-error-mess">{errors.email.message}</p>
+            )}
           </div>
 
-          <div>
+          <div className="form-input-container">
             <label htmlFor="phone">Numer kontaktowy*</label>
             <input
               {...register('phone')}
               name="phone"
               type="tel"
+              className="form-delivery-data"
               placeholder="Wpisz swój numer telefonu"
               aria-invalid={errors.phone ? 'true' : 'false'}
             />
-            {errors.phone && <p>{errors.phone.message}</p>}
+            {errors.phone && (
+              <p className="form-error-mess">{errors.phone.message}</p>
+            )}
           </div>
 
-          <div>
+          <div className="form-input-container">
             <label htmlFor="description">Dodatkowe uwagi do zamówienia</label>
             <textarea
               {...register('description')}
               name="description"
+              className="form-delivery-data"
               placeholder="Jeśli masz jakieś uwagi wpisz je tutaj..."
               aria-invalid={errors.description ? 'true' : 'false'}
             />
-            {errors.description && <p>{errors.description.message}</p>}
+            {errors.description && (
+              <p className="form-error-mess">{errors.description.message}</p>
+            )}
           </div>
         </div>
 
         {/* Zakładanie konta */}
-        <div>
+        <div className="form-input-container">
           <h2>Zakładnie konta</h2>
-          <div>
+          <div className="form-input-container">
             <label htmlFor="createAccount">
               Chce założyć konto razem z zamówieniem
             </label>
             <div>
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('isCreatedAccountChecked')}
                   name="createAccount"
                   type="checkbox"
+                  className="check-box"
                 />
                 <span>zakładam konto</span>
               </div>
             </div>
           </div>
 
-          <div>
+          <div className="form-input-container">
             <label htmlFor="password">Moje hasło*</label>
             <input
               {...register('password')}
               name="password"
               type="password"
+              className="password-box"
               placeholder="dasd13eas1231asd!@##"
               aria-invalid={errors.password ? 'true' : 'false'}
             />
-            {errors.password && <p>{errors.password.message}</p>}
+            {errors.password && (
+              <p className="form-error-mess">{errors.password.message}</p>
+            )}
           </div>
 
-          <div>
+          <div className="form-input-container">
             <label htmlFor="confirmPassword">Powtórz hasło*</label>
             <input
               {...register('confirmPassword')}
               name="confirmPassword"
               type="password"
+              className="password-box"
               placeholder="dasd13eas1231asd!@##"
               aria-invalid={errors.confirmPassword ? 'true' : 'false'}
             />
-            {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
+            {errors.confirmPassword && (
+              <p className="form-error-mess">
+                {errors.confirmPassword.message}
+              </p>
+            )}
           </div>
         </div>
 
         {/* Zgody i newsletter */}
-        <div>
+        <div className="form-input-container">
           <h2>Zgody i newsletter</h2>
-          <div>
+          <div className="form-input-container">
             <label htmlFor="terms">
               Realizując zamówienie, akceptujesz regulamin naszego sklepu*
             </label>
             <div>
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('isTermsChecked')}
                   name="terms"
                   type="checkbox"
+                  className="check-box"
                   aria-invalid={errors.isTermsChecked ? 'true' : 'false'}
                 />
                 <span>akceptuję regulamin*</span>
                 {errors.isTermsChecked && (
-                  <p>{errors.isTermsChecked.message}</p>
+                  <p className="form-error-mess">
+                    {errors.isTermsChecked.message}
+                  </p>
                 )}
               </div>
             </div>
           </div>
 
-          <div>
+          <div className="form-input-container form--spacing">
             <label htmlFor="newsletter">
               Dołącz do naszego newslettera z promocjami dla naszych klientów
             </label>
             <div>
-              <div>
+              <div className="checkbox-container">
                 <input
                   {...register('isNewsletterChecked')}
                   name="newsletter"
                   type="checkbox"
+                  className="check-box"
                 />
                 <span>zapisuje się na listę mailingową</span>
               </div>
             </div>
           </div>
         </div>
-        <button type="submit">Składam zamówienie</button>
+        <button className="form-button" type="submit">
+          Składam zamówienie
+        </button>
       </form>
     </div>
   );
