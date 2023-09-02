@@ -14,6 +14,7 @@ import { ToDoWithServerMetaData } from './ToDoWithServer/router-data';
 import { BasicFormsMetaData } from './BasicForms/router-data';
 import { BasicFormsV2MetaData } from './BasicFormsV2/router-data';
 import { FirebaseExerciseMetaData } from './FirebaseExercise/router-data';
+import { ReduxTestMetaData } from './ReduxTest/router-data';
 
 export const blockRouterMetaData = [
   SubRouteExampleMetaData,
@@ -30,6 +31,7 @@ export const blockRouterMetaData = [
   BasicFormsMetaData,
   BasicFormsV2MetaData,
   FirebaseExerciseMetaData,
+  ReduxTestMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
