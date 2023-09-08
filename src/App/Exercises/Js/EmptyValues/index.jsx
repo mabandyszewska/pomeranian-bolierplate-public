@@ -72,6 +72,7 @@ export function Exercise() {
   const surname = 'Wick';
   const age = 26;
   const quoteWithoutTemplateString =
+    // eslint-disable-next-line no-useless-concat
     name + ' ' + surname + ' ' + 'lat' + ' ' + age;
   const quoteWitTemplateString = `${name} ${surname} lat ${age}`;
 

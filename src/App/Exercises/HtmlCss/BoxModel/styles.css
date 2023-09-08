@@ -1,13 +1,13 @@
 .testing-box-model {
-  margin: 32px 10px 30px 0;
-  border: 8px dashed black;
-  padding: 8px 16px;
+  margin: 2rem 1rem 32rem 0;
+  border: 0.5rem dashed black;
+  padding: 0.5rem 1rem;
   background-color: rgba(127, 255, 212, 0.404);
 }
 .display-inline span {
   /* display: inline; span is an inline element itself*/
   background-color: yellow;
-  margin: 16px;
+  margin: 1rem;
   /* przegladarka ignoruje marginesy góra-dół w inline elementach  */
 }
 .display-block span {
@@ -20,7 +20,7 @@
   background-color: plum;
   display: inline-block;
   /* elemnty się nie łamią, nie zajmują całej linii */
-  margin: 16px;
+  margin: 1rem;
   /* marginesy działają z każdej strony, przeglądarka bierze pod uwagę każdy margines */
 }
 .display-none {
@@ -29,29 +29,29 @@
 }
 .box-sizing-border-box {
   box-sizing: border-box;
-  border: 8px solid black;
-  margin: 16px;
-  padding: 16px;
+  border: 0.5rem solid black;
+  margin: 1rem;
+  padding: 1rem;
   width: 300px;
   height: 200px;
 }
 .box-sizing-content-box {
   box-sizing: content-box;
-  border: 8px solid black;
-  margin: 16px;
-  padding: 16px;
+  border: 0.5rem solid black;
+  margin: 1rem;
+  padding: 1rem;
   width: 300px;
   height: 200px;
 }
 .testing-overflow {
-  border: 10px solid black;
+  border: 1rem solid black;
   max-height: 150px;
   /* overflow: hidden; */
   overflow-y: scroll;
   color: red;
 }
 .section-css-units {
-  font-size: 20px;
+  font-size: 1rem;
 }
 .css-units-em {
   border: 5px solid black;
@@ -59,7 +59,7 @@
 }
 .css-units-px {
   border: 5px solid black;
-  padding: 32px;
+  padding: 2rem;
 }
 .css-units-rem {
   border: 5px solid black;

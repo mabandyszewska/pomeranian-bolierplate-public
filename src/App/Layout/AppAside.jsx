@@ -8,9 +8,9 @@ import { BookIcon } from '../Components/Icons/BookIcon';
 import { FaqIcon } from '../Components/Icons/FaqIcon';
 import './styles/aside.css';
 
-export function AppAside() {
+export function AppAside({ visible }) {
   return (
-    <aside>
+    <aside className={visible ? 'aside-visible' : ''}>
       <nav>
         <ul>
           <li>

@@ -1,8 +1,8 @@
 .cwiczenie3 button {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background-color: #fe3756;
   color: white;
-  padding: 20px 36px;
+  padding: 1rem 2rem;
   border: 1px solid #fe3756;
   width: 326px;
   cursor: pointer;

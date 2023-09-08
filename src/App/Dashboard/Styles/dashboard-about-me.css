@@ -1,32 +1,25 @@
 .dashboard .dashboard-about-me {
   padding-top: 5rem;
 }
-
-/* .dashboard .dashboard-about-me .person {
-  background: no-repeat center url('../../Images/portret-marta.jpg');
-  background-position: 40%;
-  background-size: 8.5rem;
-  border-radius: 50%;
-  height: 7rem;
-  width: 7rem;
-} */
-
+.person {
+  margin-bottom: 2rem;
+}
 .dashboard-about-me .email-container,
 .dashboard-about-me .telephone-container {
   color: var(--colors-black-100, #000);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-size: 14px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1rem;
   opacity: 0.9;
 }
 
 .dashboard-about-me .email-container p,
 .dashboard-about-me .telephone-container p {
-  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 .dashboard-about-me .telephone-container {
-  margin-top: 20px;
+  margin-top: 2rem;
 }

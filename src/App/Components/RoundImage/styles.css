@@ -2,8 +2,6 @@
   background: url('../../Images/portret-marta.jpg');
   background-position: 50%;
   background-size: 100%;
-  width: 7rem;
-  height: 7rem;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);

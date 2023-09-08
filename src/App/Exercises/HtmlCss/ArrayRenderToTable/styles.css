@@ -1,7 +1,7 @@
 .table-bands-styling {
   border-collapse: collapse;
   width: 50%;
-  font-size: 18px;
+  font-size: 1rem;
   color: var(--text-text-primary, #222);
   border-radius: 1rem;
   overflow: hidden;

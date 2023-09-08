@@ -1,4 +1,5 @@
 aside {
+  grid-area: sidebar;
   border-right: 1px solid var(--color-grey);
   padding: 1rem;
   display: flex;
@@ -14,6 +15,7 @@ aside {
 
     & li {
       display: flex;
+      margin-bottom: 1.5rem;
       align-items: center;
       justify-content: left;
       line-height: 2rem;
@@ -35,7 +37,7 @@ aside {
         }
 
         & .icon {
-          margin-right: 16px;
+          margin-right: 1rem;
 
           & path {
             stroke: var(--color-purple);
@@ -46,46 +48,16 @@ aside {
   }
 }
 
-/* aside ul {
-  Nadpisanie domyślnych styli przeglądarki
-  padding-inline-start: 0.5rem;
-  list-style: none;
-} */
+@media only screen and (max-width: 50rem) {
+  aside {
+    display: none;
+  }
 
-/* aside li {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  line-height: 2rem;
-} */
-
-/* .aside-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-} */
-
-/* aside a {
-  display: flex;
-  align-items: center;
-  padding: 2px;
-  text-decoration: none;
-  color: var(--secondary-secondary, #23213d);
-} */
-
-/* aside a.active,
-aside a:hover {
-  color: #fe3756;
-} */
-
-/* .icon {
-  margin-right: 16px;
-} */
-/* .icon path {
-  stroke: var(--secondary-secondary, #23213d);
+  aside.aside-visible {
+    display: flex;
+    position: absolute;
+    top: 5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 100vh;
+  }
 }
-
-aside a.active .icon path,
-aside a:hover .icon path {
-  stroke: var(--primary-primary, #fe3756);
-} */

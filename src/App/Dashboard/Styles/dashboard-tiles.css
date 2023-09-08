@@ -16,7 +16,7 @@
   padding: 2rem;
   width: 15rem;
   height: 15rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: 1px solid #c8cbd1;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15);
 }

@@ -4,7 +4,7 @@
   height: 100vh;
 
   grid-template-columns: 12rem 1fr;
-  grid-template-rows: 5rem 4fr 5rem;
+  grid-template-rows: 5rem 4fr auto;
   grid-template-areas:
     'header header'
     'sidebar main'
@@ -22,4 +22,13 @@ main {
   flex-direction: column;
   flex: 1;
   padding: 1.5rem;
+}
+
+@media only screen and (max-width: 50rem) {
+  .layout {
+    grid-template-areas:
+      'header header'
+      'main main'
+      'footer footer';
+  }
 }

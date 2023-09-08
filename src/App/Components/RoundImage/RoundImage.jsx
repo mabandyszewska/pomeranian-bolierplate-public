@@ -1,10 +1,10 @@
 import './styles.css';
 
-export const RoundImage = ({ size }) => {
+export const RoundImage = ({ size = '50px' }) => {
   return (
     <div
       className="round-image"
-      style={{ borderRadius: '100%', width: '50px', height: '50px' }}
+      style={{ borderRadius: '100%', width: size, height: size }}
     />
   );
 };

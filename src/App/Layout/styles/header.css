@@ -1,6 +1,7 @@
 header {
   grid-area: header;
   position: relative;
+  background-color: var(--color-white);
   z-index: 1;
   display: flex;
   flex-direction: row;
@@ -18,7 +19,25 @@ header.header-title {
   font-weight: normal;
 }
 
-header .logo {
-  height: 40vmin;
+header .pomeranian-logo {
+  height: 5rem;
   pointer-events: none;
+}
+.header-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 50rem) {
+  header div.images-container {
+    display: none;
+  }
+  .header-btn {
+    display: block;
+  }
+  header .pomeranian-logo {
+    height: 2.5rem;
+  }
 }

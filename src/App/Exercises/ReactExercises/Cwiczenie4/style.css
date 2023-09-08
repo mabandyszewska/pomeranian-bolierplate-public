@@ -4,12 +4,12 @@
 .columns {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 3rem;
 }
 .columns form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 .columns form label {
   font-weight: bold;
@@ -17,13 +17,13 @@
 .columns form input {
   border-radius: 5px;
   border: 1px solid #c8cbd1;
-  padding: 13px 16px;
+  padding: 13px 1rem;
 }
 .columns form button {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background-color: #fe3756;
   color: white;
-  padding: 20px 36px;
+  padding: 1rem 2rem;
   border: 1px solid #fe3756;
   width: 326px;
   cursor: pointer;

@@ -17,21 +17,12 @@ header.header-title {
   color: var(--color-grey);
   font-weight: normal;
 }
-header .logo {
-}
 
 header .image-container {
   display: flex;
   align-items: center;
 }
 header .circular_image {
-  width: 49px;
-  height: 49px;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: blue;
-  display: inline-block;
-  vertical-align: middle;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }

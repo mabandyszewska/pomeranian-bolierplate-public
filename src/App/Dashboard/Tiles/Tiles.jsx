@@ -1,19 +1,20 @@
+import './styles.css';
 import { Link } from 'react-router-dom';
 import codeSvg from '../../Images/tiles/code.svg';
 import personalcard from '../../Images/tiles/personalcard.svg';
-import teacher from '../../Images/tiles/teacher.svg';
-import folder2 from '../../Images/tiles/folder-2.svg';
-import statusup from '../../Images/tiles/status-up.svg';
 import edit from '../../Images/tiles/edit.svg';
+import note from '../../Images/tiles/note.svg';
+import messages from '../../Images/tiles/messages.svg';
 
 export const Tiles = () => {
   const SeeMoreLink = (props) => {
-    return <Link to={props.to}>Zobacz więcej</Link>;
+    return <Link to={props.to}>See more</Link>;
   };
 
   return (
     <div className="dashboard-tiles-container">
-      <h2>Hi, I'm Marta</h2>
+      <img src="../../Images/waving-hand-sign.jpg" alt="waving hand sign" />
+      <h3 className="dashboard-heading-hello">Hi, I'm Marta!</h3>
       <p>
         Below you will find the most important information about my activities.
       </p>
@@ -22,49 +23,39 @@ export const Tiles = () => {
           <p className="dashboard-tile-title">My CV</p>
           <img src={personalcard} alt="icon tech stack" />
           <p className="dashboard-tile-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            cv preview along with experience
           </p>
           <SeeMoreLink to="my-cv" />
-        </div>
-        <div>
-          <p className="dashboard-tile-title">Projects</p>
-          <img src={folder2} alt="icon tech stack" />
-          <p className="dashboard-tile-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-          <SeeMoreLink to="tech-stack" />
         </div>
         <div>
           <p className="dashboard-tile-title">Exercises</p>
           <img src={edit} alt="icon tech stack" />
           <p className="dashboard-tile-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            all the exercises performed
           </p>
           <SeeMoreLink to="exercises" />
         </div>
         <div>
-          <p className="dashboard-tile-title">Education</p>
-          <img src={teacher} alt="icon tech stack" />
-          <p className="dashboard-tile-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-          <SeeMoreLink to="my-education" />
+          <p className="dashboard-tile-title">Form</p>
+          <img src={note} alt="icon note" />
+          <p className="dashboard-tile-description">order contact form</p>
+          <SeeMoreLink to="form" />
         </div>
         <div>
           <p className="dashboard-tile-title">Tech stack</p>
           <img src={codeSvg} alt="icon tech stack" />
           <p className="dashboard-tile-description">
-            Technology stack implemented on the course
+            technology stack implemented on the course
           </p>
           <SeeMoreLink to="tech-stack" />
         </div>
         <div>
-          <p className="dashboard-tile-title">Experience</p>
-          <img src={statusup} alt="icon tech stack" />
+          <p className="dashboard-tile-title">FAQ</p>
+          <img src={messages} alt="icon tech stack" />
           <p className="dashboard-tile-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            answers to the most common questions
           </p>
-          <SeeMoreLink to="experience" />
+          <SeeMoreLink to="faq" />
         </div>
       </div>
     </div>

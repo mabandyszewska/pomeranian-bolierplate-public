@@ -1,15 +1,15 @@
 h1 {
   color: var(--secondary-secondary, #23213d);
   font-family: Poppins;
-  font-size: 18px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 34px; /* 188.889% */
+  line-height: 2rem; /* 188.889% */
 }
 .paragraph {
   color: var(--text-text-primary, #222);
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 27px; /* 168.75% */
@@ -17,26 +17,26 @@ h1 {
 .blog-container {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 2rem;
 }
 .blog-list-item {
   color: var(--text-text-primary, #222);
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
   text-decoration-line: underline;
-  margin-bottom: 28px;
+  margin-bottom: 2rem;
 }
 
 .blog-post {
   display: inline-flex;
-  padding: 45px 61px;
+  padding: 3rem 3.5rem;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  border-radius: 8px;
+  gap: 1rem;
+  border-radius: 0.5rem;
   background: var(--gray-80, #f4f5f7);
 }
 .test {
@@ -57,17 +57,17 @@ h1 {
 .blog-post-header {
   color: var(--text-text-primary, #222);
   font-family: Poppins;
-  font-size: 42px;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 800;
   line-height: 56px;
-  margin: 0 0 28px 0;
+  margin: 0 02rem 0;
 }
 
 .quote {
   color: var(--text-text-primary, #222);
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: italic;
   font-weight: 400;
   line-height: 27px; /* 168.75% */
@@ -77,7 +77,7 @@ h1 {
   color: var(--text-text-primary, #222);
   text-align: right;
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
   line-height: 22px; /* 157.143% */
@@ -85,15 +85,15 @@ h1 {
 .author {
   color: var(--text-text-secondary, rgba(34, 34, 34, 0.8));
   font-family: Poppins;
-  font-size: 18px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 32px; /* 177.778% */
+  line-height: 2rem; /* 177.778% */
 }
 .position {
   color: var(--text-text-secondary, rgba(34, 34, 34, 0.8));
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
