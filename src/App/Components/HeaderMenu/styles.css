@@ -9,6 +9,10 @@ header {
   padding-left: 1.5rem;
   padding-right: 3rem;
   box-shadow: 0 1px 9px 0 var(--color-grey);
+  height: 7rem;
+  flex-shrink: 0;
+  background-color: #fff;
+  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
 }
 header > a:first-of-type {
   text-decoration: none;
@@ -26,19 +30,28 @@ header .circular_image {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
-header .circular_image img {
-  width: 100%;
-}
+
 header .name-surname-container {
   display: flex;
   flex-direction: column;
 }
 header h4 {
   margin-bottom: 0;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
 }
 header h5 {
   margin-top: 0;
+  color: var(--gray-500, #999);
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
 }
 header svg:nth-of-type(2) {
   margin-left: 2rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  cursor: pointer;
 }

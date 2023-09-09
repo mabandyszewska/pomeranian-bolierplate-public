@@ -1,12 +1,13 @@
+import './styles/aside.css';
 import { NavLink } from 'react-router-dom';
-import { CalendarIcon } from '../../App/Components/Icons/CalendarIcon';
+import { CodeIcon } from '../../App/Components/Icons/CodeIcon';
 import { PersonalCardIcon } from '../../App/Components/Icons/PersonalCardIcon';
 import { HouseIcon } from '../../App/Components/Icons/HouseIcon';
 import { EditIcon } from '../../App/Components/Icons/EditIcon';
-import { ElementIcon } from '../../App/Components/Icons/ElementIcon';
 import { BookIcon } from '../Components/Icons/BookIcon';
 import { FaqIcon } from '../Components/Icons/FaqIcon';
-import './styles/aside.css';
+import { MoleGameIcon } from '../Components/Icons/MoleGameIcon';
+import { MemoGameIcon } from '../Components/Icons/MemoGameIcon';
 
 export function AppAside({ visible }) {
   return (
@@ -26,9 +27,9 @@ export function AppAside({ visible }) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="blocks">
-              <ElementIcon className="icon" />
-              <span>Bloki</span>
+            <NavLink to="tech-stack">
+              <CodeIcon className="icon" />
+              <span>Tech stack</span>
             </NavLink>
           </li>
           <li>
@@ -38,15 +39,21 @@ export function AppAside({ visible }) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="calendar">
-              <CalendarIcon className="icon" />
-              <span>Kalendarz</span>
+            <NavLink to="mole-game">
+              <MoleGameIcon className="icon" />
+              <span>Game | Hit the Mole </span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="blog">
+            <NavLink to="memo-game">
+              <MemoGameIcon className="icon" />
+              <span>Game | Memo </span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="form">
               <BookIcon className="icon" />
-              <span>Blog</span>
+              <span>Form</span>
             </NavLink>
           </li>
           <li>

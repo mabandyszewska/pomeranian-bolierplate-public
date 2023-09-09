@@ -2,4 +2,27 @@
   display: list-item;
   list-style: none;
   text-decoration: none;
+  display: flex;
+  width: 27.1875rem;
+  height: 5.5625rem;
+  padding: 1rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  border-radius: 0.4375rem;
+  border: 0.747px solid var(--secondary-secondary, #23213d);
+}
+.exercises-categories a.active {
+  color: #fe3756;
+  border: 0.747px solid var(--primary-primary, #fe3756);
+  stroke: #fe3756;
+}
+.exercise-heading4 {
+  border: none;
+  color: var(--secondary-secondary, #23213d);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6875rem; /* 168.75% */
+  margin: 0;
+  padding: 0;
 }

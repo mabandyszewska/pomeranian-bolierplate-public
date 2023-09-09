@@ -7,14 +7,10 @@ export const Categories = () => {
   return (
     <>
       <div className="exercises-categories">
-        <h2>Kategorie</h2>
-
-        <NavLink to="html-css">HTML & CSS - lista ćwiczeń</NavLink>
-        <NavLink to="js">JavaScript - lista ćwiczeń</NavLink>
-        <NavLink to="react">React - lista ćwiczeń</NavLink>
-        <NavLink to="web-api">Web API - lista ćwiczeń</NavLink>
-        <NavLink to="async">Asynchroniczność - lista ćwiczeń</NavLink>
-        <NavLink to="firebase">Firebase - lista ćwiczeń</NavLink>
+        <h4 className="exercise-heading4">categories</h4>
+        <NavLink to="html-css">HTML & CSS</NavLink>
+        <NavLink to="js">JavaScript</NavLink>
+        <NavLink to="react">React</NavLink>
       </div>
     </>
   );

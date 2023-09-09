@@ -1,15 +1,10 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 
-import { NotFound } from './App/Components/NotFound/NotFound';
-
-import { Calendar } from './App/Calendar';
 import { CV } from './App/CV';
-import { Blocks } from './App/Blocks';
 import { Layout } from './App/Layout';
 import { Dashboard } from './App/Dashboard';
 import { Exercises } from './App/Exercises';
-import { Blog } from './App/Blog';
 import { Faq } from './App/FAQ';
 import { TechStack } from './App/Components/TechStack/TechStack';
 
@@ -20,14 +15,10 @@ export function App() {
         <Route path="" element={<Layout withSidebar />}>
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard/*" element={<Dashboard />} />
-          <Route path="dashboard/tech-stack/*" element={<TechStack />} />
-          <Route path="exercises/*" element={<Exercises />} />
-          <Route path="blocks/*" element={<Blocks />} />
           <Route path="cv/*" element={<CV />} />
-          <Route path="calendar/*" element={<Calendar />} />
-          <Route path="blog/*" element={<Blog />} />
+          <Route path="tech-stack/*" element={<TechStack />} />
+          <Route path="exercises/*" element={<Exercises />} />
           <Route path="faq/*" element={<Faq />} />
-          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

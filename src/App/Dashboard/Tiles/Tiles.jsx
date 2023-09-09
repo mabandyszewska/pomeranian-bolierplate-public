@@ -5,6 +5,7 @@ import personalcard from '../../Images/tiles/personalcard.svg';
 import edit from '../../Images/tiles/edit.svg';
 import note from '../../Images/tiles/note.svg';
 import messages from '../../Images/tiles/messages.svg';
+import wavingHand from '../../Images/waving-hand-sign.png';
 
 export const Tiles = () => {
   const SeeMoreLink = (props) => {
@@ -13,9 +14,15 @@ export const Tiles = () => {
 
   return (
     <div className="dashboard-tiles-container">
-      <img src="../../Images/waving-hand-sign.jpg" alt="waving hand sign" />
-      <h3 className="dashboard-heading-hello">Hi, I'm Marta!</h3>
-      <p>
+      <div className="column-to-row-fixer">
+        <img
+          className="waving-hand-icon"
+          src={wavingHand}
+          alt="waving hand sign"
+        />
+        <h3 className="dashboard-heading-hello">Hi, I'm Marta!</h3>
+      </div>
+      <p className="margin-fixer">
         Below you will find the most important information about my activities.
       </p>
       <div className="dashboard-tiles">

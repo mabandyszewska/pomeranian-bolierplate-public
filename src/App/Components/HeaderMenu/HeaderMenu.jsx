@@ -9,14 +9,13 @@ export const HeaderMenu = () => {
     <div className="image-container">
       <SettingIcon />
 
-      {/* wykorzystać komponent RoundImage */}
       <div className="circular_image">
         <RoundImage />
       </div>
 
       <div className="name-surname-cntainer">
-        <h4>Marta Bandyszewska</h4>
-        <h5>Test</h5>
+        <h4>Marta </h4>
+        <h5>kursant</h5>
       </div>
 
       <ChevronDownIcon className="menu-arrow" />
